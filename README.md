@@ -19,7 +19,7 @@ A powerful Chrome Extension that automatically scrapes business leads from Googl
 1. Open Chrome and go to `chrome://extensions`
 2. Enable **Developer Mode** (toggle in the top-right corner)
 3. Click **Load unpacked**
-4. Select this folder: `c:\Users\Gaming_Setif\Documents\maps scraper`
+4. Select this folder: `c:\Users\<pcnam>\Documents\maps scraper`
 5. The extension icon will appear in your toolbar
 
 ## How to Use
