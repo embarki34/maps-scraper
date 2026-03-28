@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maps Lead Scraper</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#4285F4"/>
+      </svg>
+      <span class="title">Maps Lead Scraper</span>
+    </div>
+    <div id="statusDot" class="dot dot-idle" title="Idle"></div>
+  </header>
+
+  <div id="warningBanner" class="warning hidden">
+    ⚠️ Open Google Maps and search first.
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num" id="totalCount">0</div>
+      <div class="stat-label">Leads Scraped</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="sessionCount">0</div>
+      <div class="stat-label">This Session</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="mode-toggle-wrap">
+      <span class="mode-label">Quick Scan</span>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="mode-label">Full Scan</span>
+    </div>
+    
+    <button id="btnToggle" class="btn btn-primary">
+      <span id="btnIcon">▶</span>
+      <span id="btnLabel">Start Scraping</span>
+    </button>
+    <button id="btnClear" class="btn btn-ghost" title="Clear all stored leads">🗑 Clear</button>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="progress-wrap hidden" id="progressWrap">
+    <div class="progress-bar" id="progressBar"></div>
+    <span class="progress-label" id="progressLabel">Scraping...</span>
+  </div>
+
+  <!-- Preview Table -->
+  <div class="section-label">Preview <span id="previewCount"></span></div>
+  <div class="table-wrap">
+    <table id="previewTable">
+      <thead>
+        <tr>
+          <th>Business Name</th>
+          <th>Phone</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr class="empty-row">
+          <td colspan="3">No leads yet — start scraping!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Export -->
+  <div class="export-row">
+    <button id="btnCsv" class="btn btn-export" disabled>⬇ CSV</button>
+    <button id="btnJson" class="btn btn-export" disabled>⬇ JSON</button>
+  </div>
+
+  <div class="footer">v1.0 · Maps Lead Scraper</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
